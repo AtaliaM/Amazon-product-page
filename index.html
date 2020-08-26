@@ -74,7 +74,7 @@
             </div>
             <!--Cart-->
             <div class="main-nav-cart-container">
-                <span class="main-nav-cart-count">0</span>
+                <span class="main-nav-cart-count">0</span> <!--manipulating this-->
                 <span class="main-nav-cart-icon"><img src="./img/cart (1).png" alt="" width="38px"></span>
                 <div class="line-2">Cart</div>
             </div>
@@ -340,7 +340,25 @@
             </div>
         </div>
     
+<script>
 
+    const buyNow = document.querySelector(".btn-buy-now");
+    const addToCart = document.querySelector(".btn-add-to-cart");
+    const shoppingCartNumber = document.querySelector(".main-nav-cart-count");
+    let shoppingCartNumberValue = parseInt(shoppingCartNumber.textContent);
+    // console.log(shoppingCartNumberValue+1);
+    // console.log(shoppingCartNumberValue);
+
+    function incrementShoppingCart() {
+        // console.log("inside func");
+        shoppingCartNumber.textContent = shoppingCartNumberValue+1;
+        shoppingCartNumberValue+=1;
+        // console.log(shoppingCartNumberValue);
+    }
+
+    buyNow.addEventListener("click", incrementShoppingCart);
+    addToCart.addEventListener("click", incrementShoppingCart);
+</script>
 
 </body>
 </html>
